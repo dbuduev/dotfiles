@@ -253,6 +253,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   )
 
+(defun js/set-indent-level ()
+  (setq js-indent-level 2))
+
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
@@ -267,7 +270,10 @@ you should place you code here."
    alchemist-goto-erlang-source-dir "/usr/lib/erlang/lib/kernel-4.2/src/"
    alchemist-goto-elixir-source-dir "/home/dennis/src/elixir/")
   (setq-default
-   evil-shift-round nil)))
+   evil-shift-round nil)
+  (add-to-list 'auto-mode-alist '("\\.PRC\\'" . sql-mode))
+  (add-hook 'json-mode-hook 'js/set-indent-level)
+  (add-hook 'js-mode-hook 'js/set-indent-level)))
 
 (defun gnutls-skip-certificate-check ()
   "Fix for 'Fatal error: The TLS connection was non-properly terminated'"
