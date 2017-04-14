@@ -1,0 +1,9 @@
+URxvt*foreground: #31D408
+URxvt*background: #075E5E 
+URxvt*fading: 70
+URxvt*scrollBar_right: true
+URxvt.font: 9x15
+URxvt.scrollstyle: plain 
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
