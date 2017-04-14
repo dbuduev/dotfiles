@@ -23,3 +23,7 @@ nnoremap <silent> <Leader><Tab> :<C-u>:bnext<CR>
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll 
+
+" comment
+nmap <Leader>;; gcc 
+xmap <Leader>;; gcc
