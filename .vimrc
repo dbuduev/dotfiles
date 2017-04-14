@@ -19,3 +19,7 @@ autocmd FileType erlang setlocal sw=2 ts=2 noexpandtab
 
 let mapleader=" " 
 nnoremap <silent> <Leader><Tab> :<C-u>:bnext<CR>
+
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll 
