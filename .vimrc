@@ -15,7 +15,7 @@ set hidden " Allow switching modified buffers
 set hlsearch
 set incsearch
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-autocmd FileType erlang setlocal sw=2 ts=2 noexpandtab
+autocmd FileType erlang setlocal sw=4 ts=4 sts=4 noexpandtab
 
 let mapleader=" " 
 nnoremap <silent> <Leader><Tab> :<C-u>:bnext<CR>
@@ -25,5 +25,13 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll 
 
 " comment
-nmap <Leader>;; gcc 
+nmap <Leader>;; gcc
 xmap <Leader>;; gcc
+
+set laststatus=2 " Vim-airline setting.
+let g:airline_theme='solarized'
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
