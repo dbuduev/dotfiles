@@ -28,10 +28,20 @@ set guioptions-=r  "remove right-hand scroll
 nmap <Leader>;; gcc
 xmap <Leader>;; gcc
 
-set laststatus=2 " Vim-airline setting.
+set laststatus=2 " Vim-airline setting. Always show a status line
 let g:airline_theme='solarized'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Don't show the intro
+set shortmess+=I
+
+" Turn on the mouse in all modes
+set mouse=a
+
+" Always splits to the right and below
+set splitright
+set splitbelow
