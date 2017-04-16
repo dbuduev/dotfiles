@@ -5,6 +5,13 @@ filetype plugin on
 
 set path+=**
 set wildmenu
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*DS_Store*
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg
+
 set backspace=indent,eol
 
 set number
@@ -45,3 +52,16 @@ set mouse=a
 " Always splits to the right and below
 set splitright
 set splitbelow
+
+" Don't show matching brackets
+set noshowmatch
+
+" Show incomplete commands
+set showcmd
+
+" w!!: Writes using sudo
+cnoremap w!! w !sudo tee % >/dev/null
+
+" CtrlP options
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] " ignore files in .gitignore
+let g:ctrlp_by_filename = 1
