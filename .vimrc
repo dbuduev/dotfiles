@@ -65,3 +65,5 @@ cnoremap w!! w !sudo tee % >/dev/null
 " CtrlP options
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] " ignore files in .gitignore
 let g:ctrlp_by_filename = 1
+
+nnoremap <Leader>bd :bn<bar>bd #<CR>
