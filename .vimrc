@@ -68,3 +68,7 @@ let g:ctrlp_by_filename = 1
 
 " Close file w/o closing the buffer
 nnoremap <Leader>bd :bn<bar>bd #<CR>
+
+" netrw
+let g:netrw_browsex_viewer="xdg-open"
+let g:netrw_altv=1
