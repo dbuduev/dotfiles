@@ -3,6 +3,19 @@ set nocompatible
 syntax enable
 filetype plugin on
 
+call plug#begin('~/.config/nvim/plugged')
+Plug 'slashmili/alchemist.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'justinmk/vim-sneak'
+Plug 'nightsense/vim-crunchbang'
+call plug#end()
+
 set path+=**
 set wildmenu
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
@@ -36,10 +49,13 @@ nmap <Leader>;; gcc
 xmap <Leader>;; gcc
 
 set laststatus=2 " Vim-airline setting. Always show a status line
-let g:airline_theme='solarized'
+" let g:airline_solarized_bg='dark'
+let g:airline_theme='dark'
+
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
-
+" Enable powerline fonts
+let g:airline_powerline_fonts = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
@@ -72,3 +88,6 @@ nnoremap <Leader>bd :bn<bar>bd #<CR>
 " netrw
 let g:netrw_browsex_viewer="xdg-open"
 let g:netrw_altv=1
+
+" Colors
+colorscheme crunchbang
