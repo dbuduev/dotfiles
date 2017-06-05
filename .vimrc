@@ -3,7 +3,13 @@ set nocompatible
 syntax enable
 filetype plugin on
 
-call plug#begin('~/.config/nvim/plugged')
+if has('win32') || has('win64')
+"    let g:python_host_prog  = 'C:\Python27\python.exe'
+    let g:python3_host_prog = 'C:\Python36\python.exe'
+    call plug#begin('~/nvim/plugged')
+else
+    call plug#begin('~/.config/nvim/plugged')
+endif 
 Plug 'slashmili/alchemist.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
@@ -79,8 +85,19 @@ set showcmd
 cnoremap w!! w !sudo tee % >/dev/null
 
 " CtrlP options
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] " ignore files in .gitignore
+if executable('pt')
+  let g:ctrlp_user_command = 'pt %s -l --nocolor -g ""'
+elseif has('win32')
+  let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d | findstr /v /l ".jpg \\tmp\\ .obj .dll .exe .pdf .zip"'
+else
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard', 'find %s -type f'] " ignore files in .gitignore
+endif	
+let g:ctrlp_custom_ignore = {
+\ 'dir': '\v[\/]\.(git|hg|svn)$',
+\ 'file': '\v\.(exe|so|dll)$',
+\ }
 let g:ctrlp_by_filename = 1
+let g:ctrlp_working_path_mode = 'ar'
 
 " Close file w/o closing the buffer
 nnoremap <Leader>bd :bn<bar>bd #<CR>
