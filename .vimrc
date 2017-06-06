@@ -4,7 +4,7 @@ syntax enable
 filetype plugin on
 
 if has('win32') || has('win64')
-"    let g:python_host_prog  = 'C:\Python27\python.exe'
+    let g:python_host_prog  = 'C:\Python27\python.exe'
     let g:python3_host_prog = 'C:\Python36\python.exe'
     call plug#begin('~/nvim/plugged')
 else
