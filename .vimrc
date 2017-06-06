@@ -10,6 +10,7 @@ if has('win32') || has('win64')
 else
     call plug#begin('~/.config/nvim/plugged')
 endif 
+
 Plug 'slashmili/alchemist.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
@@ -20,6 +21,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'justinmk/vim-sneak'
 Plug 'nightsense/vim-crunchbang'
+Plug 'vim-syntastic/syntastic'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
 call plug#end()
 
 set path+=**
@@ -91,7 +95,7 @@ elseif has('win32')
   let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d | findstr /v /l ".jpg \\tmp\\ .obj .dll .exe .pdf .zip"'
 else
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard', 'find %s -type f'] " ignore files in .gitignore
-endif	
+endif
 let g:ctrlp_custom_ignore = {
 \ 'dir': '\v[\/]\.(git|hg|svn)$',
 \ 'file': '\v\.(exe|so|dll)$',
@@ -108,3 +112,7 @@ let g:netrw_altv=1
 
 " Colors
 colorscheme crunchbang
+
+nnoremap <C-J> a<CR><Esc>k$ " C-J to enter new line w/o entering insert mode.
+
+let g:deoplete#enable_at_startup = 1
