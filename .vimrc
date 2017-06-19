@@ -7,6 +7,7 @@ if has('win32') || has('win64')
     let g:python_host_prog  = 'C:\Python27\python.exe'
     let g:python3_host_prog = 'C:\Python36\python.exe'
     call plug#begin('~/nvim/plugged')
+    Plug '~/nvim/plugged/omnisharp-vim'
 else
     call plug#begin('~/.config/nvim/plugged')
 endif 
@@ -24,6 +25,7 @@ Plug 'nightsense/vim-crunchbang'
 Plug 'vim-syntastic/syntastic'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
+Plug 'tpope/vim-dispatch'
 call plug#end()
 
 set path+=**
@@ -115,4 +117,12 @@ colorscheme crunchbang
 
 nnoremap <C-J> a<CR><Esc>k$ " C-J to enter new line w/o entering insert mode.
 
+augroup filetypedetect
+    au BufRead,BufNewFile *.ps1 set filetype=powershell
+augroup END
+
+autocmd FileType powershell setlocal commentstring=#\ %s
+
 let g:deoplete#enable_at_startup = 1
+augroup omnisharp_commands
+augroup END
