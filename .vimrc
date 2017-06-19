@@ -8,6 +8,7 @@ if has('win32') || has('win64')
     let g:python3_host_prog = 'C:\Python36\python.exe'
     call plug#begin('~/nvim/plugged')
     Plug '~/nvim/plugged/omnisharp-vim'
+    Plug 'PProvost/vim-ps1'
 else
     call plug#begin('~/.config/nvim/plugged')
 endif 
@@ -116,12 +117,6 @@ let g:netrw_altv=1
 colorscheme crunchbang
 
 nnoremap <C-J> a<CR><Esc>k$ " C-J to enter new line w/o entering insert mode.
-
-augroup filetypedetect
-    au BufRead,BufNewFile *.ps1 set filetype=powershell
-augroup END
-
-autocmd FileType powershell setlocal commentstring=#\ %s
 
 let g:deoplete#enable_at_startup = 1
 augroup omnisharp_commands
