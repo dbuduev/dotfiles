@@ -49,6 +49,7 @@ set hlsearch
 set incsearch
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 autocmd FileType erlang setlocal sw=4 ts=4 sts=4 noexpandtab
+autocmd FileType ps1 setlocal sw=4 ts=4 sts=4 noexpandtab
 
 let mapleader=" " 
 nnoremap <silent> <Leader><Tab> :<C-u>:bnext<CR>
