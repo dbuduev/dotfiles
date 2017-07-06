@@ -13,6 +13,8 @@ alias lla='ls -la'
 alias et='emacsclient -t'
 alias ec='emacsclient -c'
 
+alias t2='tree -L 2'
+
 PS1='[\u@\h \W]\$ '
 
 export GDK_CORE_DEVICE_EVENTS=1
