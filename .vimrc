@@ -26,7 +26,6 @@ Plug 'nightsense/vim-crunchbang'
 Plug 'vim-syntastic/syntastic'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
-Plug 'tpope/vim-dispatch'
 call plug#end()
 
 set path+=**
