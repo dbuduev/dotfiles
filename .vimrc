@@ -49,6 +49,8 @@ set incsearch
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 autocmd FileType erlang setlocal sw=4 ts=4 sts=4 noexpandtab
 autocmd FileType ps1 setlocal sw=4 ts=4 sts=4 noexpandtab
+autocmd FileType cs setlocal sw=4 ts=4 sts=4 expandtab
+autocmd FileType javascript setlocal sw=2 ts=2 sts=2 expandtab
 
 let mapleader=" " 
 nnoremap <silent> <Leader><Tab> :<C-u>:bnext<CR>
@@ -121,3 +123,16 @@ nnoremap <C-J> a<CR><Esc>k$ " C-J to enter new line w/o entering insert mode.
 let g:deoplete#enable_at_startup = 1
 augroup omnisharp_commands
 augroup END
+
+" Windows shortcuts
+nnoremap <Leader>ws <C-w>s
+nnoremap <Leader>wv <C-w>v
+nnoremap <Leader>ww <C-w>w
+
+nnoremap <Leader>wl <C-w>l
+nnoremap <Leader>wh <C-w>h
+nnoremap <Leader>wj <C-w>j
+nnoremap <Leader>wk <C-w>k
+
+nnoremap <Leader>wc <C-w>c
+
