@@ -135,4 +135,5 @@ nnoremap <Leader>wj <C-w>j
 nnoremap <Leader>wk <C-w>k
 
 nnoremap <Leader>wc <C-w>c
+nnoremap <Leader>wo <C-w>o
 
