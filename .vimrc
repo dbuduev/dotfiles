@@ -21,12 +21,12 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-dispatch'
 Plug 'justinmk/vim-sneak'
 Plug 'nightsense/vim-crunchbang'
 Plug 'vim-syntastic/syntastic'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet' | Plug 'Shougo/neosnippet-snippets'
-Plug 'bronson/vim-visual-star-search'
 call plug#end()
 
 set path+=**
@@ -122,7 +122,10 @@ colorscheme crunchbang
 nnoremap <C-J> a<CR><Esc>k$ " C-J to enter new line w/o entering insert mode.
 
 let g:deoplete#enable_at_startup = 1
+
 augroup omnisharp_commands
+    let g:OmniSharp_server_type='roslyn'
+    " let g:Omnisharp_start_server=1
 augroup END
 
 " Windows shortcuts
@@ -137,5 +140,3 @@ nnoremap <Leader>wk <C-w>k
 
 nnoremap <Leader>wc <C-w>c
 nnoremap <Leader>wo <C-w>o
-nnoremap <Leader>wT <C-w>T
-
