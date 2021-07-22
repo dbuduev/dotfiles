@@ -72,3 +72,6 @@ fi
 if command -v gron &>/dev/null; then
   alias ungron="gron --ungron"
 fi
+
+alias d=docker
+complete -F __start_docker d
