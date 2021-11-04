@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source ${HOMEBREW_PREFIX}/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -73,13 +73,6 @@ if command -v minikube >/dev/null 2>&1; then
 	complete -F __start_kubectl k
 fi
 
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
-
 if command -v zoxide &>/dev/null; then
   eval "$(zoxide init zsh)"
 fi
@@ -90,3 +83,18 @@ fi
 
 alias d=docker
 complete -F __start_docker d
+
+# gcloud
+source ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+export PATH="${HOMEBREW_PREFIX}/opt/openssl@3/bin:$PATH"
+
+# Homebrew
+
+if type brew &>/dev/null; then
+  FPATH=${HOMEBREW_PREFIX}/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit > /dev/null
+fi
+
